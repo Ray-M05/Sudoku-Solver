@@ -1,0 +1,34 @@
+# Directorios de build de Cabal
+dist/
+dist-newstyle/
+
+# Directorios de build de Stack (por si acaso)
+.stack-work/
+
+# Archivos de configuración locales de Cabal
+cabal.project.local
+cabal.project.local~
+
+# Archivos generados por GHC
+*.hi
+*.o
+*.dyn_hi
+*.dyn_o
+
+# Perf / profiling / coverage
+*.prof
+*.aux
+*.hp
+*.eventlog
+*.tix
+
+# Cosas del editor
+*.swp
+*.swo
+*~
+.tags
+.hoogle
+
+# Entornos locales varios
+.hsenv
+.ghc.environment.*
