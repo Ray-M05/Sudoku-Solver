@@ -13,13 +13,13 @@ solveOne g =
     (x:_) -> Just x
     []    -> Nothing
 
--- Devuelve todas las soluciones posibles (normalmente 0 o 1 para sudokus bien formados)
+-- Devuelve todas las soluciones posible
 solveAll :: Grid -> [Grid]
 solveAll g
   | not (isValid g) = []
   | otherwise =
       case findEmpty g of
-        Nothing   -> [g]   -- no hay casillas vacias: solucion encontrada
+        Nothing   -> [g]  
         Just pos  ->
           [ sol
           | v <- [1..9]

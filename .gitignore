@@ -2,7 +2,7 @@
 dist/
 dist-newstyle/
 
-# Directorios de build de Stack (por si acaso)
+# Directorios de build de Stack
 .stack-work/
 
 # Archivos de configuración locales de Cabal

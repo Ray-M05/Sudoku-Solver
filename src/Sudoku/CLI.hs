@@ -29,9 +29,15 @@ runCLI = do
       else readGridFromFile path
   case eGrid of
     Left err -> putStrLn ("Error al cargar el sudoku: " ++ err)
-    Right g  -> do
-      putStrLn "Sudoku cargado. Escribe 'help' para ver comandos."
-      loop (AppState g [])
+    Right g  ->
+      if isValid g
+        then do
+          putStrLn "Sudoku valido cargado. Escribe 'help' para ver comandos."
+          loop (AppState g [])
+        else do
+          putStrLn "El sudoku del archivo es invalido. Revisa filas/columnas/bloques."
+          putStrLn "No se puede continuar con este tablero."
+
 
 loop :: AppState -> IO ()
 loop st = do
