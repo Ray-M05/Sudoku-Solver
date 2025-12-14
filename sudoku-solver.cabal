@@ -20,3 +20,32 @@ executable sudoku-solver
 
   ghc-options:       -Wall
   default-language:  Haskell2010
+
+test-suite sudoku-solver-tests
+  type:             exitcode-stdio-1.0
+  hs-source-dirs:   test, src
+  main-is:          Spec.hs
+
+  build-depends:
+      base >= 4.14 && < 5
+    , hspec
+
+  ghc-options:      -Wall
+  default-language: Haskell2010
+executable sudoku-gui
+  hs-source-dirs:   app-gui, src
+  main-is:          Main.hs
+
+  build-depends:
+      base >= 4.14 && < 5
+    , gloss
+
+  other-modules:
+      Sudoku.Types
+      Sudoku.Parser
+      Sudoku.Logic
+      Sudoku.Solver
+      Sudoku.GUI
+
+  ghc-options:      -Wall
+  default-language: Haskell2010
